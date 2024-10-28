@@ -1,19 +1,12 @@
-const express = require('express'); // Import Express  
+const express = require('express');  
 
-const init = async () => {  
-    const app = express(); // Create an Express application  
+const app = express();  
+const port = 8080;  
 
-    // Start the server  
-    const port = 8080;  
-    app.listen(port, () => {  
-        console.log(`Server running on http://localhost:${port}`);  
-    });
+app.get('/', (req, res) => {  
+    res.send('Hello World!');  
+});  
 
-    // Define the route  
-    app.get('/', (req, res) => {  
-        res.send('Hello World!'); // Respond with 'Hello World!'  
-    });    
-};  
-
-// Call the init function to start the server  
-init();
+app.listen(port, () => {  
+    console.log(`Server berjalan pada http://localhost:${port}`);  
+});
